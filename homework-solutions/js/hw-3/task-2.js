@@ -4,3 +4,14 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+let n = 6; // стартовое число от 1 до 9
+
+let nn = String(n) + String(n); // формируем число nn конкатенацией
+
+let nnn = String(n) + String(n) + String(n); // формируем число nnn конкатенацией
+
+let result = Number(n) + Number(nn) + Number(nnn); // превращаем переменные в числа и складываем их
+
+console.log(result); // вывод финального результата
+
