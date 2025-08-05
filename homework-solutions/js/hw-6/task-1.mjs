@@ -5,10 +5,14 @@
     если элемент четный - возведет его в квадрат
     если элемент нечетный - возведет его в 3ю степень
 
-  Значение добавьте в массив 'forOf' 
+  Значение добавьте в массив 'forOf'
 */
 const forOf = [];
-
+const numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (const num of numbers1) {
+    const transformed = num % 2 === 0 ? num ** 2 : num ** 3;
+    forOf.push(transformed);
+}
 /*
 2. Методы массивов
   - Создайте массив [1,2,3,4,5]
@@ -20,15 +24,22 @@ const forOf = [];
   В результате вы должны получить массив [0, 1, 3, 4, 5], присвойте в переменную "result"
 */
 
-let result;
+const numbers2 = [1, 2, 3, 4, 5];
 
+numbers2.push(6);
+numbers2.unshift(0);
+numbers2.splice(2, 1);
+numbers2.pop();
+
+const result = numbers2;
 /*
 3. Деструктуризация массивов
-  - Создайте массив [3, 11, 32, 7, 20] 
+  - Создайте массив [3, 11, 32, 7, 20]
   - Через деструктуризацию получите в новые переменные первый, второй и остальные элементы массива
 
   Пример: [1,2,3,4,5] => first === 1; second === 2, rest === [3,4,5]
 */
+const [first, second, ...rest] = [3, 11, 32, 7, 20];
 
 /*
 4. Конкатенация массивов
@@ -38,5 +49,8 @@ let result;
 
   Создайте переменную mergedArray, который будет хранить значения из массивов 1 и 2
 */
+const array41 = [1, 2, 3, 4, 5];
+const array42 = [6, 7, 8, 9, 10];
+const mergedArray = [...array41, ...array42];
 
 export { forOf, result, first, second, rest, mergedArray };
