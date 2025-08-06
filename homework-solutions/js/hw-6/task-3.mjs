@@ -6,6 +6,16 @@
 
   Присвойте результат в переменную "unique"
 */
-let unique;
+const unique = [];
+
+const initialArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 1, 3, 5, 7, 9];
+const seen = {};
+
+for (const num of initialArray) {
+  if (!seen[num]) {
+    unique.push(num);
+    seen[num] = true;
+  }
+}
 
 export { unique };
