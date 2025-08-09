@@ -9,7 +9,23 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  // Базовый случай рекурсии: если число уже однозначное, возвращаем его.
+  if (number < 10) {
+    return number;
+  }
+
+  // Превращаем число в строку, чтобы итерироваться по цифрам.
+  let numberAsString = String(number);
+  let sum = 0;
+
+  // Используем цикл for...of для сложения цифр.
+  for (const digit of numberAsString) {
+    // Преобразуем символ обратно в число и добавляем к сумме.
+    sum += Number(digit);
+  }
+
+  // Рекурсивно вызываем функцию с полученной суммой.
+  return digitalRoot(sum);
 }
 
 export { digitalRoot };
