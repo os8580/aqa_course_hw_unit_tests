@@ -7,7 +7,13 @@
 */
 
 function findMissingNumber(numbers) {
-  // Ваш код
+    const uniqueNumbers = [...new Set(numbers)]; // лишаем входящий массив дубликатов
+    const n = uniqueNumbers.length + 1; //определяем N
+    const actualSum = uniqueNumbers.reduce((sum, current) => sum + current, 0); //считаем сумму чисел в массиве
+    const expectedSum = (n * (n + 1)) / 2; //считаем, какой должна быть сумма чисел от 1 до N.
+    return expectedSum - actualSum;
+
+
 }
 
 export { findMissingNumber };
