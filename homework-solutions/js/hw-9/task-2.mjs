@@ -49,7 +49,7 @@ function updateCharacter(name, newCharacter) {
 }
 
 function removeCharacter(name) {
-  const index = characters.findIndex(c => c.name === name);
+  const index = characters.findIndex((c) => c.name === name);
 
   if (index === -1) {
     throw new Error(`Персонаж "${name}" не найден`);
