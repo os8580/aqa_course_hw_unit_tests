@@ -14,23 +14,48 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  // Ваш код
+  // проверим, что поля есть и правильного типа
+  if (typeof character.name === 'string' && typeof character.age === 'number') {
+    characters.push(character);
+  } else {
+    throw new Error('Некорректный объект: нужен name (string) и age (number)');
+  }
 }
 
 function getCharacter(name) {
-  // Ваш код
+  return characters.find((char) => char.name === name);
 }
 
 function getCharactersByAge(minAge) {
-  // Ваш код
+  if (typeof minAge !== 'number') {
+    throw new Error('minAge должен быть числом');
+  }
+  return characters.filter((char) => char.age >= minAge);
 }
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
+  let currentCharacter = getCharacter(name);
+
+  if (!currentCharacter) {
+    throw new Error(`Персонаж "${name}" не найден`);
+  }
+
+  if (typeof newCharacter.name === 'string' && typeof newCharacter.age === 'number') {
+    currentCharacter.name = newCharacter.name;
+    currentCharacter.age = newCharacter.age;
+  } else {
+    throw new Error('Некорректный объект: нужен name (string) и age (number)');
+  }
 }
 
 function removeCharacter(name) {
-  // Ваш код
+  const index = characters.findIndex(c => c.name === name);
+
+  if (index === -1) {
+    throw new Error(`Персонаж "${name}" не найден`);
+  }
+
+  characters.splice(index, 1);
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
