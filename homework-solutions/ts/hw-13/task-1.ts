@@ -31,7 +31,7 @@ type Grade = 'junior' | 'middle' | 'senior';
     - model (строка),
     - опциональное поле year (число).
 */
-interface Car {
+interface ICar {
   brand: string;
   model: string;
   year?: number;
@@ -43,13 +43,13 @@ interface Car {
     - Интерфейса FullAddress, который наследует интерфейс Address и добавляет поле country (строка).
   
 */
-interface Address {
+interface IAddress {
   street: string;
   city: string;
   zipCode: number;
 }
 
-interface FullAddress extends Address {
+interface IFullAddress extends IAddress {
   country: string;
 }
 /*
@@ -79,6 +79,6 @@ type DiscountedProduct = Product & { discount: number };
 console.log(calculateDiscount(product)); // Ожидается: 900
 */
 
-function calculateDiscount(product: { id: number; name: string; price: number; discount: number }) {
+function calculateDiscount(product: DiscountedProduct): number {
   return product.price - (product.price * product.discount) / 100;
 }
