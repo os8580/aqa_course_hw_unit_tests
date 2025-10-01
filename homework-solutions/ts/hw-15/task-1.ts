@@ -4,7 +4,7 @@ interface IEmployee {
     salary: number;
     isManager: boolean;
 }
-let QA: IEmployee = {
+const QA: IEmployee = {
     name: 'Victor',
     salary: 5000,
     isManager: true
