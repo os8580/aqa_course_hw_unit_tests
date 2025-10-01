@@ -31,7 +31,7 @@ abstract class Vehicle implements IVehicle {
     - Реализует метода getDetails, возвращающего строку: "{make} {model}, {year}".
 */
 class Car extends Vehicle {
-  constructor(make: string, model: string, public year: number) {
+  constructor(make: string, model: string, protected year: number) {
     super(make, model);
   }
   getDetails(): string {
