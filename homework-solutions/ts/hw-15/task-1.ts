@@ -24,7 +24,7 @@ type OmitEmployee = Omit<IEmployee, 'isManager'>
 // 8. Создайте тип, который будет содержать все поля из интерфейса IEmployee и сделает их неизменяемыми (readonly)
 type ReadonlyEmployee = Readonly<IEmployee>
 // 9. Создайте объект с помощью Record, в ключах которого будут строки, а в значениях - ключи объекта QA (Используйте Record, keyof, typeof)
-let qaKeys: Record<keyof typeof QA, keyof typeof QA> = {
+const qaKeys: Record<string, keyof typeof QA> = {
     name: 'name',
     salary: 'salary',
     isManager: 'isManager'
