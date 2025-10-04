@@ -1,0 +1,34 @@
+Task 2
+========================================================================================================
+
+1. Элемент с id 'submit'
+   XPath: //*[@id='submit']
+   CSS: #submit
+
+2. Все элементы с классом 'txt'
+   XPath: //*[@class='txt'] или //*[contains(@class,'txt')]
+   CSS: .txt
+
+3. Первый элемент с классом 'txt'
+   XPath: (//*[@class='txt'])[1] или (//*[contains(@class,'txt')])[1]
+
+4. Кнопка с текстом 'Remove comment'
+   XPath: //button[text()='Remove comment'] или //button[normalize-space(text())='Remove comment']
+
+5. Первый элемент с классом 'one'
+   XPath: (//*[@class='one'])[1] или (//*[contains(@class,'one')])[1]
+
+6. Элемент с атрибутом multitag2='on'
+   XPath: //*[@multitag2='on']
+   CSS: [multitag2='on']
+
+7. Все дети div с классом 'content'
+   XPath: //div[@class='content']/*
+   CSS: div.content > *
+
+8. Все элементы span и button с классом 'content'
+   XPath: //span[@class='content'] | //button[@class='content']
+   CSS: span.content, button.content
+
+9. Используя за основу селектор //*[@id='submit'], найти body
+   XPath: //*[@id='submit']/ancestor::body
